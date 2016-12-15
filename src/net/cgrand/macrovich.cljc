@@ -17,7 +17,7 @@
    For Clojurescript/JVM the block is only visible to Clojurescript.
    For self-hosted Clojurescript the block is invisible when defining macros in the pseudo-namespace."
   [& body]
-  (when-not #?(:clj (not (:ns &env)) :cljs (re-matches #".*\$macros" (name (ns-name *ns*))))
+  (when #?(:clj true :cljs (not (re-matches #".*\$macros" (name (ns-name *ns*)))))
     `(do ~@body)))
 
 (defmacro case [& {:keys [cljs clj]}]
