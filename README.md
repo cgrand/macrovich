@@ -53,7 +53,11 @@ There's a third macro in Macrovich: `case` which allows to select which form to 
   #?(:clj "clojure" :cljs "clojurescript"))
 
 (defmacro correct []
-  `(macros/case :clj "clojure" :cljs "clojurescript")) ; don't forget the quote!
+  (macros/case :clj "clojure" :cljs "clojurescript"))
+
+; or
+(defmacro correct []
+  `(macros/case :clj "clojure" :cljs "clojurescript")) ; this works too, so no need to unquote in the middle of a syntax quotation and mess with gensyms
 ```
 
 In regular (Clojure-hosted) Clojurescript `(broken)` expands to `"clojure"` while `(correct)` expands to `"clojurescript"`.

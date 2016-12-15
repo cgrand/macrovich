@@ -21,6 +21,8 @@
     `(do ~@body)))
 
 (defmacro case [& {:keys [cljs clj]}]
-  (if #?(:clj (:ns &env) :cljs true)
-    cljs
-    clj))
+  (if (contains? &env '&env)
+    `(if (:ns ~'&env) ~cljs ~clj)
+    (if #?(:clj (:ns &env) :cljs true)
+      cljs
+      clj)))
