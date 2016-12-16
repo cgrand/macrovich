@@ -17,6 +17,8 @@ Excerpt from *Being John Macrovich* script:
 
 ## Usage
 
+Add `[net.cgrand/macrovich "0.1.0"]` to your dependencies.
+
 Below is a sample `being-john.cljc` file:
 
 ```clj
