@@ -17,8 +17,6 @@ Excerpt from *Being John Macrovich* script:
 
 ## Usage
 
-Warning: this require a Clojurescript build from master else you get a StackOverflow on the recursive `require-macros`.
-
 Below is a sample `being-john.cljc` file:
 
 ```clj
@@ -61,6 +59,15 @@ There's a third macro in Macrovich: `case` which allows to select which form to 
 ```
 
 In regular (Clojure-hosted) Clojurescript `(broken)` expands to `"clojure"` while `(correct)` expands to `"clojurescript"`.
+
+## Example
+
+The xforms lib has been converted to cljc:
+
+ * https://github.com/cgrand/xforms/blob/cljc/src/net/cgrand/xforms.cljc
+ * https://github.com/cgrand/xforms/blob/cljc/src/net/cgrand/xforms/rfs.cljc
+ * https://github.com/cgrand/xforms/blob/cljc/test/net/cgrand/xforms_test.clj
+
 
 ## License
 
