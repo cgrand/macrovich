@@ -19,7 +19,15 @@ Excerpt from *Being John Macrovich* script:
 
 Clojurescript >= 1.9.293 is required. It means that if you are using [Planck 1.17](https://github.com/mfikes/planck) you need to build it yourself. On macOS it's just `brew install --devel planck`. Lumo 1.0.0 is ok.
 
-Add `[net.cgrand/macrovich "0.1.0"]` to your dependencies.
+Add `[net.cgrand/macrovich "0.2.0"]` to your dependencies.
+
+Macrovich exposes four macros:
+
+ * `macros/deftime` and `macros/usetime` to clearly demarcate regions of code that should be run in the macro-definition stage or in the macro-usage stage. (In Clojure there's no distinction; in pure Clojurescript it's easy: just wrap the first stage in `#?(:clj ...)` and the latter one in `#?(:cljs ...)`; in self-hosted Clojurescript it's messy or everything gets evaluated twice; supporting the three at the same time is Macrovich's _raison d'être_.)
+ * `macros/case` is a macro to use instead of reader conditionals in macros or macros-supporting fns. This solves a problem with regular Clojurescript where macros are Clojure code and thus are read by taking the `:clj` branch of conditionals. So `macros/case` is like reader conditionals except the branch is picked at expansion time and not at definition time.
+ * `macros/replace` is a macro to avoid repeating similar reader conditionals.
+
+## Sample
 
 Below is a sample `being-john.cljc` file:
 
@@ -48,7 +56,7 @@ Below is a sample `being-john.cljc` file:
 ; anything outside these block is always visible as usual
 ```
 
-There's a third macro in Macrovich: `case` which allows to select which form to emit in a macro based on the *target language* rather than the *macro language*. Consider these two macros:
+`case` allows to select which form to emit in a macro based on the *target language* rather than the *macro language*. Consider these two macros:
 
 ```clj
 (defmacro broken []
@@ -75,6 +83,6 @@ The xforms lib has been converted to cljc:
 
 ## License
 
-Copyright © 2016 Christophe Grand
+Copyright © 2016-2017 Christophe Grand
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
