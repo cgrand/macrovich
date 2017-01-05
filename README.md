@@ -25,7 +25,7 @@ Macrovich exposes four macros:
 
  * `macros/deftime` and `macros/usetime` to clearly demarcate regions of code that should be run in the macro-definition stage or in the macro-usage stage. (In Clojure there's no distinction; in pure Clojurescript it's easy: just wrap the first stage in `#?(:clj ...)` and the latter one in `#?(:cljs ...)`; in self-hosted Clojurescript it's messy or everything gets evaluated twice; supporting the three at the same time is Macrovich's _raison d'être_.)
  * `macros/case` is a macro to use instead of reader conditionals in macros or macros-supporting fns. This solves a problem with regular Clojurescript where macros are Clojure code and thus are read by taking the `:clj` branch of conditionals. So `macros/case` is like reader conditionals except the branch is picked at expansion time and not at definition time.
- * `macros/replace` is a macro to avoid repeating similar reader conditionals.
+ * `macros/replace` is a macro to avoid repeating similar reader conditionals, see https://github.com/cgrand/xforms/blob/d4f0280bb50d8cc53c3a5dfe24b17fe7701b4e43/src/net/cgrand/xforms.cljc#L276 for an example.
 
 ## Sample
 
