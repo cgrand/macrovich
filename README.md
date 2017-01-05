@@ -1,6 +1,6 @@
 # Macrovich
 
-Because any macros problem can be solved by another level of macros, Macrovich is a set of three macros to ease writing `*.cljc` supporting Clojure, Clojurescript and self-hosted Clojurescript.
+Because any macros problem can be solved by another level of macros, Macrovich is a set of four macros to ease writing `*.cljc` supporting Clojure, Clojurescript and self-hosted Clojurescript.
 
 Excerpt from *Being John Macrovich* script:
 <dl>
