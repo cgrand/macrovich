@@ -17,7 +17,7 @@ Excerpt from *Being John Macrovich* script:
 
 ## Usage
 
-Clojurescript >= 1.9.293 is required. It means that if you are using [Planck 1.17](https://github.com/mfikes/planck) you need to build it yourself. On macOS it's just `brew install --devel planck`. Lumo 1.0.0 is ok.
+Clojurescript >= 1.9.293 is required. This means Planck 2.0.0 or later is required. Lumo 1.0.0 is ok.
 
 Add `[net.cgrand/macrovich "0.2.0"]` to your dependencies.
 
