@@ -1,0 +1,17 @@
+{
+  "name": "macrovich",
+  "version": "0.2.0",
+  "description": "A set of three macros to ease writing `*.cljc` supporting Clojure, Clojurescript and self-hosted Clojurescript.",
+  "author": "Christophe Grand",
+  "homepage": "https://github.com/cgrand/macrovich",
+  "license": "EPL-1.0",
+  "directories": {
+    "lib": "src",
+    "cache": "./lumo-cache"
+  },
+  "keywords": [
+    "cljs",
+    "self-host",
+    "macro"
+  ]
+}
