@@ -1,4 +1,4 @@
-(defproject net.cgrand/macrovich "0.2.1-SNAPSHOT"
+(defproject net.cgrand/macrovich "0.2.1"
   :description "A set of three macros to ease writing `*.cljc` supporting Clojure, Clojurescript and self-hosted Clojurescript."
   :url "https://github.com/cgrand/macrovich"
   :license {:name "Eclipse Public License"

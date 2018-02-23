@@ -19,7 +19,7 @@ Excerpt from *Being John Macrovich* script:
 
 Clojurescript >= 1.9.293 is required. This means Planck 2.0.0 or later is required. Lumo 1.0.0 is ok.
 
-Add `[net.cgrand/macrovich "0.2.0"]` to your dependencies.
+Add `[net.cgrand/macrovich "0.2.1"]` to your dependencies.
 
 Macrovich exposes four macros:
 
