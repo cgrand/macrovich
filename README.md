@@ -29,15 +29,15 @@ Macrovich exposes four macros:
 
 ## Sample
 
-Below is a sample `being-john.cljc` file:
+Below is a sample `being/john.cljc` file:
 
 ```clj
-(ns being-john
+(ns being.john
   #?(:clj
      (:require [net.cgrand.macrovich :as macros])
      :cljs
      (:require-macros [net.cgrand.macrovich :as macros]
-        [net.cgrand.being :refer [add]]))) ; cljs must self refer macros
+        [being.john :refer [add]]))) ; cljs must self refer macros
 
 (macros/deftime
   ; anything inside a deftime block will only appear at the macro compilation stage.
