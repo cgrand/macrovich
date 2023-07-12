@@ -20,12 +20,13 @@
   (when #?(:clj true :cljs (not (re-matches #".*\$macros" (name (ns-name *ns*)))))
     `(do ~@body)))
 
-(defmacro case [& {:keys [cljs clj]}]
-  (if (contains? &env '&env)
-    `(if (:ns ~'&env) ~cljs ~clj)
-    (if #?(:clj (:ns &env) :cljs true)
-      cljs
-      clj)))
+(defmacro case [& {:keys [cljd cljs clj]}]
+  (cond
+    (contains? &env '&env)
+    `(cond (:ns ~'&env) ~cljs (:nses ~'&env) ~cljd :else ~clj)
+    #?(:clj (:ns &env) :cljs true) cljs
+    #?(:clj (:nses &env) :cljd true) cljd
+    :else clj))
 
 (defmacro replace [map-or-maps & body]
   (let [smap (if (map? map-or-maps) map-or-maps (reduce into {} map-or-maps))
@@ -45,4 +46,3 @@
                                 (meta form))
                  :else form))]
     `(do ~@(map walk body))))
-
