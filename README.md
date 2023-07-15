@@ -1,4 +1,4 @@
-# Macrovich
+# Macrovich [![Clojars Project](https://img.shields.io/clojars/v/net.cgrand/macrovich.svg)](https://clojars.org/net.cgrand/macrovich) [![NPM Version](https://img.shields.io/npm/v/macrovich.svg)](https://www.npmjs.org/package/macrovich)
 
 Because any macros problem can be solved by another level of macros, Macrovich is a set of four macros to ease writing `*.cljc` supporting Clojure, Clojurescript and self-hosted Clojurescript. (Especially when porting Clojure codebases where macros are not segregated.)
 
