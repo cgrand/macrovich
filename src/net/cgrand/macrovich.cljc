@@ -1,5 +1,6 @@
 (ns net.cgrand.macrovich
-  (:refer-clojure :exclude [case replace]))
+  (:refer-clojure :exclude [case replace])
+  #?(:cljs (:require-macros net.cgrand.macrovich)))
 
 (defmacro deftime
   "This block will only be evaluated at the correct time for macro definition, at other times its content
