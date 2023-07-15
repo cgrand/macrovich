@@ -6,9 +6,11 @@
   "homepage": "https://github.com/cgrand/macrovich",
   "license": "EPL-1.0",
   "directories": {
-    "lib": "src",
-    "cache": "./lumo-cache"
+    "lib": "src"
   },
+  "files": [
+    "src/*"
+  ],
   "keywords": [
     "cljs",
     "cljc",
